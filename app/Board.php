@@ -5,6 +5,7 @@ namespace App;
 use App\Exceptions\CheckMateException;
 use App\Position;
 use App\Exceptions\ChessException;
+use Log;
 
 class Board
 {
@@ -13,6 +14,8 @@ class Board
     static public $rowCount = 8;
 
     protected $board;
+
+    public $lastMessage;
 
     public function __construct() {
         $this->board = array_fill(1, self::$columnCount, array_fill(1, self::$rowCount, null));
@@ -53,7 +56,7 @@ class Board
 
         $this->place($piece, $to);
 
-        var_dump(sprintf("%s %s moves from %s to %s", ucfirst($piece->getColor()), class_basename($piece), $from, $to));
+        $this->lastMessage = sprintf("%s %s moves from %s to %s", ucfirst($piece->getColor()), class_basename($piece), $from, $to);
 
         return $to;
 

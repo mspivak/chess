@@ -10,6 +10,8 @@ use App\Exceptions\CheckMateException;
 use App\Exceptions\ChessException;
 use Illuminate\Http\Request;
 
+use Log;
+
 class ChessController extends Controller
 {
 
@@ -28,13 +30,23 @@ class ChessController extends Controller
         $board->place(new King('black'), $blackKingPosition);
 
         try {
-            for ( $i=0 ; $i<100 ; $i++ ) {
+
+            // Limit the number of movements just to avoid an infinite loop.
+            // We could be using while (1==1) here.
+            for ( $i=1 ; $i < 100 ; $i++ ) {
+
                 $whiteHorsePosition = $board->makeRandomMovement($whiteHorsePosition);
+                $messages[] = $board->lastMessage;
                 $blackKingPosition = $board->makeRandomMovement($blackKingPosition);
+                $messages[] = $board->lastMessage;
             }
         } catch (CheckMateException $e) {
-            var_dump($e->getMessage()." after $i movements.");
+
+            $resultMessage = sprintf("%s after %s movements.", $e->getMessage(), count($messages));
+
         }
+
+        return view('log')->with(compact('messages', 'resultMessage'));
 
     }
 
