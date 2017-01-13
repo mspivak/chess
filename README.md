@@ -1,21 +1,11 @@
-# Lumen PHP Framework
+# Mauro Spivak's doctor.com job application test
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+## Introduction
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+Hey there! Thanks for taking the time to read this and review my application. For any comments, questions or suggestions, don't hesitate on dropping me a few lines to mauros@gmail.com
 
-## Official Documentation
+## Coding Standards and Conducts
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+I try to stick to [PHP Standards Recommendations](http://www.php-fig.org/psr/) as much as I can. 
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Also, rather than using (too many) comments in my code, I try to write –where applicable-, code that's understandable by itself without the need of comments.
