@@ -1,8 +1,8 @@
-# Mauro Spivak's doctor.com job application test
+# Mauro Spivak's chess simulator
 
 ## Introduction
 
-Hey there! Thanks for taking the time to read this and review my application. For any comments, questions or suggestions, don't hesitate on dropping me a few lines to mauros@gmail.com
+Hey there! Thanks for taking the time to read this and check my app. For any comments, questions or suggestions, don't hesitate on dropping me a few lines to mauros@gmail.com
 
 ## Coding Standards and Conducts
 
