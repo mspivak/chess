@@ -5,16 +5,21 @@
   font-style: normal;
 }
 
+* {
+  outline: 0;
+}
+
 body {
   margin: 40px;
 }
 
 h1, h2 {
-  margin: 40px;
+  margin: 40px 0;
 }
 
-* {
-  outline: 0;
+ol {
+  padding-left: 0;
+  list-style-type: decimal;
 }
 
 #game .movement {
@@ -22,12 +27,15 @@ h1, h2 {
   margin-bottom: 20px;
 }
 
+#game .movement .message {
+  margin-left: 250px;
+  margin-top: 25px;
+}
+
 #game .movement .board {
   position: relative;
-  margin-right: 40px;
-  font-family: chess_casesregular;
   font-size: 1.3em;
-  width: 200px;
+  width: 225px;
   float: left;
 }
 
@@ -39,12 +47,12 @@ h1, h2 {
   width: 25px;
   height: 25px;
   float: left;
-  line-height: 100%;
   text-align: center;
   background-color: #9cc;
 }
 
 #game .movement .board .row .cell .piece {
+  font-family: chess_casesregular;
   height: 100%;
 }
 
@@ -53,8 +61,15 @@ h1, h2 {
   background-color: #ffc;
 }
 
-#game .movement .board .row .from {
+#game .movement .board .row .cell.from {
   background-color: #f99 !important;
+}
+
+#game .movement .board .row .cell.header {
+  background-color: #fff !important;
+  font-size: .6em;
+  text-transform: uppercase;
+  line-height: 25px;
 }
 
 #game .movement .board svg {
@@ -63,8 +78,8 @@ h1, h2 {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 200px;
-  height: 200px;
+  width: 225px;
+  height: 225px;
 }
 
 #game .movement .board svg #head {
@@ -78,9 +93,8 @@ h1, h2 {
 }
 
 .btn {
-  float: right;
   position: relative;
-  margin-left: 40px;
+  margin: 40px 0;
   padding: 8px 16px;
   border: 0;
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);

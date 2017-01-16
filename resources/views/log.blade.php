@@ -6,16 +6,24 @@ $columns = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', ];
 
 @section('main')
 
-<button id="toggle-arrows" class="btn">Toggle Arrows</button>
 
 <h1>Chess!</h1>
+
+<button id="toggle-arrows" class="btn">Toggle Arrows</button>
 
 <ol id="game">
     @foreach ($movements as $movement)
         <li class="movement">
             <div class="board">
+                <div class="row">
+                    <div class="cell header">&nbsp;</div>
+                    @foreach ($columns as $col)
+                        <div class="cell header">{{ $col }}</div>
+                    @endforeach
+                </div>
                 @foreach ($movement['board'] as $rowIndex => $row)
                     <div class="row">
+                        <div class="cell header">{{ $rowIndex }}</div>
                         @foreach ($row as $i => $cell)
 
                             <?php $cellName = $columns[$i-1] . $rowIndex ?>
@@ -33,6 +41,8 @@ $columns = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', ];
                                         @endif
 
                                     </div>
+                                @else
+                                    &nbsp;
                                 @endif
                             </div>
                         @endforeach

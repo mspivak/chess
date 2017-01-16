@@ -31,6 +31,13 @@ class ChessController extends Controller
 
         $movements = [];
 
+        $movements = [[
+            'message' => "Starting game!",
+            'board' => $board->getBoard(),
+            'from' => null,
+            'to' => null
+        ]];
+
         try {
 
             // Limit the number of movements just to avoid an infinite loop.

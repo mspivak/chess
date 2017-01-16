@@ -1,3 +1,5 @@
+$cell-side: 25px;
+
 @font-face {
   font-family: 'chess_casesregular';
   src: url('../fonts/casefont-webfont.woff2') format('woff2'),
@@ -6,16 +8,21 @@
   font-style: normal;
 }
 
+* {
+  outline: 0;
+}
+
 body {
   margin: 40px;
 }
 
 h1, h2 {
-  margin: 40px;
+  margin: 40px 0;
 }
 
-* {
-  outline: 0;
+ol {
+  padding-left: 0;
+  list-style-type:decimal;
 }
 
 #game {
@@ -26,15 +33,15 @@ h1, h2 {
     margin-bottom: 20px;
 
     .message {
+      margin-left: $cell-side * 10;
+      margin-top: $cell-side;
     }
 
     .board {
 
       position:relative;
-      font-family: chess_casesregular;
-      margin-right: 40px;
       font-size: 1.3em;
-      width: 200px;
+      width: $cell-side * 9;
       float: left;
 
       .row {
@@ -42,13 +49,14 @@ h1, h2 {
         overflow: auto;
 
         .cell {
-          width: 25px;
-          height: 25px;
+          width: $cell-side;
+          height: $cell-side;
           float: left;
           text-align: center;
           background-color: #9cc;
 
           .piece {
+            font-family: chess_casesregular;
             height: 100%;
           }
 
@@ -59,14 +67,17 @@ h1, h2 {
           background-color: #ffc;
         }
 
-        .from {
+        .cell.from {
           background-color: #f99 !important;
         }
 
-        .to {
-          //background-color: #00f !important;
-        }
 
+        .cell.header {
+          background-color: #fff !important;
+          font-size: .6em;
+          text-transform: uppercase;
+          line-height: 25px;
+        }
       }
 
       svg {
@@ -75,8 +86,8 @@ h1, h2 {
         left: 0;
         right: 0;
         bottom: 0;
-        width: 200px;
-        height: 200px;
+        width: $cell-side * 9;
+        height: $cell-side * 9;
 
         #head {
           fill: #c6c;
@@ -98,10 +109,8 @@ h1, h2 {
 
 .btn {
 
-  float: right;
-
   position: relative;
-  margin-left: 40px;
+  margin: 40px 0;
   padding: 8px 16px;
   border: 0;
   box-shadow: 3px 3px 0px rgba(0,0,0,.5);
