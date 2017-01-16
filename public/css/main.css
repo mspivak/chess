@@ -102,11 +102,29 @@ ol {
   color: #fff;
 }
 
-.btn.on {
+.btn.on, .btn:active {
   background-color: #8c8cd9;
   top: 2px;
   left: 2px;
   box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.7);
+}
+
+.btn, .btn:hover {
+  background-color: #7979d2;
+}
+
+form .form-group {
+  margin: 12px 0;
+}
+
+form .form-group label {
+  display: inline-block;
+  width: 180px;
+}
+
+form .form-group input {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
 }
 
 /*# sourceMappingURL=main.css.map */

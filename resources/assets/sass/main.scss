@@ -118,7 +118,8 @@ ol {
   background-color: #66c;
   color: #fff;
 
-  &.on {
+  &.on,
+  &:active {
 
     background-color: lighten(#66c, 10%);
 
@@ -127,6 +128,28 @@ ol {
 
     box-shadow: 1px 1px 0px rgba(0,0,0,.7);
 
+  },
+
+  &:hover {
+    background-color: lighten(#66c, 5%);
   }
 
+}
+
+form {
+  .form-group {
+
+    margin: 12px 0;
+    label {
+      display: inline-block;
+      width: 180px;
+    }
+
+    input {
+      padding: 4px 8px;
+      border: 1px solid #ddd;
+
+    }
+
+  }
 }
