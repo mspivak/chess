@@ -11,6 +11,8 @@ $columns = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', ];
 
 <button id="toggle-arrows" class="btn">Toggle Arrows</button>
 
+<a href="/" class="btn back">Go back to setup</a>
+
 <ol id="game">
     @foreach ($movements as $movement)
         <li class="movement">

@@ -93,6 +93,7 @@ ol {
 }
 
 .btn {
+  text-decoration: none;
   position: relative;
   margin: 40px 0;
   padding: 8px 16px;
@@ -111,6 +112,10 @@ ol {
 
 .btn, .btn:hover {
   background-color: #7979d2;
+}
+
+.btn.back {
+  background-color: #999;
 }
 
 form .form-group {
