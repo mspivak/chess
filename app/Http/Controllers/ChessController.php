@@ -29,6 +29,8 @@ class ChessController extends Controller
         $board->place(new Horse('white'), $whiteHorsePosition);
         $board->place(new King('black'), $blackKingPosition);
 
+        $movements = [];
+
         try {
 
             // Limit the number of movements just to avoid an infinite loop.
@@ -37,8 +39,18 @@ class ChessController extends Controller
 
                 $whiteHorsePosition = $board->makeRandomMovement($whiteHorsePosition);
                 $messages[] = $board->lastMessage;
+                $movements[] = [
+                    'message' => $board->lastMessage,
+                    'board' => $board->getBoard()
+                ];
+
                 $blackKingPosition = $board->makeRandomMovement($blackKingPosition);
                 $messages[] = $board->lastMessage;
+                $movements[] = [
+                    'message' => $board->lastMessage,
+                    'board' => $board->getBoard()
+                ];
+
             }
         } catch (CheckMateException $e) {
 
@@ -46,7 +58,11 @@ class ChessController extends Controller
 
         }
 
-        return view('log')->with(compact('messages', 'resultMessage'));
+        if (is_null($resultMessage)) {
+            $resultMessage = 'Tie! Neither white horse nor black king won the game after 100 turns each.';
+        }
+
+        return view('log')->with(compact('messages', 'resultMessage', 'movements'));
 
     }
 

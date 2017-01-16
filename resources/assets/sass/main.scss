@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'chess_casesregular';
+  src: url('../fonts/casefont-webfont.woff2') format('woff2'),
+  url('../fonts/casefont-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2 {
+  margin: 40px;
+}
+
+#game {
+
+  .movement {
+
+    overflow: auto;
+    margin-bottom: 20px;
+
+    .message {
+    }
+
+    .board {
+
+      margin-right: 40px;
+
+      font-family: chess_casesregular;
+      font-size: 1.3em;
+      width: 200px;
+      float: left;
+
+      .row {
+
+        overflow: auto;
+
+        .cell {
+          width: 25px;
+          height: 25px;
+          float: left;
+          line-height: 100%;
+          text-align: center;
+          background-color: #9cc;
+        }
+
+        &:nth-child(even) .cell:nth-child(even),
+        &:nth-child(odd) .cell:nth-child(odd) {
+          background-color: #ffc;
+        }
+
+      }
+
+    }
+
+
+  }
+
+}
