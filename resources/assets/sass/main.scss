@@ -6,8 +6,16 @@
   font-style: normal;
 }
 
+body {
+  margin: 40px;
+}
+
 h1, h2 {
   margin: 40px;
+}
+
+* {
+  outline: 0;
 }
 
 #game {
@@ -22,9 +30,9 @@ h1, h2 {
 
     .board {
 
-      margin-right: 40px;
-
+      position:relative;
       font-family: chess_casesregular;
+      margin-right: 40px;
       font-size: 1.3em;
       width: 200px;
       float: left;
@@ -37,9 +45,13 @@ h1, h2 {
           width: 25px;
           height: 25px;
           float: left;
-          line-height: 100%;
           text-align: center;
           background-color: #9cc;
+
+          .piece {
+            height: 100%;
+          }
+
         }
 
         &:nth-child(even) .cell:nth-child(even),
@@ -47,10 +59,64 @@ h1, h2 {
           background-color: #ffc;
         }
 
+        .from {
+          background-color: #f99 !important;
+        }
+
+        .to {
+          //background-color: #00f !important;
+        }
+
+      }
+
+      svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 200px;
+        height: 200px;
+
+        #head {
+          fill: #c6c;
+          marker-units: stroke-width;
+        }
+
+        .arrow {
+          stroke: #c6c;
+          stroke-width: 3;
+        }
+
       }
 
     }
 
+  }
+
+}
+
+.btn {
+
+  float: right;
+
+  position: relative;
+  margin-left: 40px;
+  padding: 8px 16px;
+  border: 0;
+  box-shadow: 3px 3px 0px rgba(0,0,0,.5);
+
+  background-color: #66c;
+  color: #fff;
+
+  &.on {
+
+    background-color: lighten(#66c, 10%);
+
+    top: 2px;
+    left: 2px;
+
+    box-shadow: 1px 1px 0px rgba(0,0,0,.7);
 
   }
 

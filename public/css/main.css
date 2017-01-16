@@ -5,8 +5,16 @@
   font-style: normal;
 }
 
+body {
+  margin: 40px;
+}
+
 h1, h2 {
   margin: 40px;
+}
+
+* {
+  outline: 0;
 }
 
 #game .movement {
@@ -15,6 +23,7 @@ h1, h2 {
 }
 
 #game .movement .board {
+  position: relative;
   margin-right: 40px;
   font-family: chess_casesregular;
   font-size: 1.3em;
@@ -35,9 +44,55 @@ h1, h2 {
   background-color: #9cc;
 }
 
+#game .movement .board .row .cell .piece {
+  height: 100%;
+}
+
 #game .movement .board .row:nth-child(even) .cell:nth-child(even),
 #game .movement .board .row:nth-child(odd) .cell:nth-child(odd) {
   background-color: #ffc;
+}
+
+#game .movement .board .row .from {
+  background-color: #f99 !important;
+}
+
+#game .movement .board svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+}
+
+#game .movement .board svg #head {
+  fill: #c6c;
+  marker-units: stroke-width;
+}
+
+#game .movement .board svg .arrow {
+  stroke: #c6c;
+  stroke-width: 3;
+}
+
+.btn {
+  float: right;
+  position: relative;
+  margin-left: 40px;
+  padding: 8px 16px;
+  border: 0;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+  background-color: #66c;
+  color: #fff;
+}
+
+.btn.on {
+  background-color: #8c8cd9;
+  top: 2px;
+  left: 2px;
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.7);
 }
 
 /*# sourceMappingURL=main.css.map */

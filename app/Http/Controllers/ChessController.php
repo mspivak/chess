@@ -37,25 +37,27 @@ class ChessController extends Controller
             // We could be using while (1==1) here.
             for ( $i=1 ; $i < 100 ; $i++ ) {
 
+                $previoousWhiteHorsePosition = $whiteHorsePosition;
                 $whiteHorsePosition = $board->makeRandomMovement($whiteHorsePosition);
-                $messages[] = $board->lastMessage;
                 $movements[] = [
                     'message' => $board->lastMessage,
-                    'board' => $board->getBoard()
+                    'board' => $board->getBoard(),
+                    'from' => (string) $previoousWhiteHorsePosition,
+                    'to' => (string) $whiteHorsePosition
                 ];
 
+                $previousBlackKingPosition = $blackKingPosition;
                 $blackKingPosition = $board->makeRandomMovement($blackKingPosition);
-                $messages[] = $board->lastMessage;
                 $movements[] = [
                     'message' => $board->lastMessage,
-                    'board' => $board->getBoard()
+                    'board' => $board->getBoard(),
+                    'from' => (string) $previousBlackKingPosition,
+                    'to' => (string) $blackKingPosition
                 ];
 
             }
         } catch (CheckMateException $e) {
-
-            $resultMessage = sprintf("%s after %s movements.", $e->getMessage(), count($messages));
-
+            $resultMessage = sprintf("%s after %s movements.", $e->getMessage(), count($movements));
         }
 
         if (is_null($resultMessage)) {
